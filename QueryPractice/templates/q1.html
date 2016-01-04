@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block question %}
+
+<p>{% for quest in quests %}
+
+    {{ quest }}
+
+    {% endfor %}
+</p>
+
+{% endblock %}

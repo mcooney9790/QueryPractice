@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block queryresult %}
+
+<p>You searched for: <strong>{{ query }}</strong></p>
+
+{% if cities %}
+    <p>Found {{ count }} results.</p>
+
+    <br>
+
+        <p>{{ cities | safe }}</p>
+
+
+{% else %}
+    <p>No results matched your query.</p>
+{% endif %}
+
+{% endblock %}
