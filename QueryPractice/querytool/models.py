@@ -21,6 +21,15 @@ class Comedians(models.Model):
     def __unicode__(self):
         return self.name
 
+class Club(models.Model):
+    name = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    capacity = models.IntegerField()
+    balcony = models.BooleanField()
+
+    def __unicode__(self):
+        return self.name
+
 class LessonQuestions(models.Model):
 
     level = models.CharField(max_length=100)

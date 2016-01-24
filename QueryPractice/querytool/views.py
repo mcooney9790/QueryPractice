@@ -23,7 +23,7 @@ def hello(request):
     return render(request, 'home.html')
 def citandcom(request):
 
-    return render(request, 'base.html')
+    return render(request, 'q1.html')
 
 def search(request):
     def fields(cursor):
@@ -99,27 +99,31 @@ def firstq(request):
         question_query = LessonQuestions.objects.filter(question_no = 4, lesson='Cities and Comedians')
         _quest = question_query
         return render(request,'q1.html',{'quests': _quest})
-    elif 'quest2' in request.POST:
+    elif 'quest5' in request.POST:
         question_query = LessonQuestions.objects.filter(question_no = 5, lesson='Cities and Comedians')
         _quest = question_query
         return render(request,'q1.html',{'quests': _quest})
-    elif 'quest2' in request.POST:
+    elif 'quest6' in request.POST:
         question_query = LessonQuestions.objects.filter(question_no = 6, lesson='Cities and Comedians')
         _quest = question_query
         return render(request,'q1.html',{'quests': _quest})
-    elif 'quest2' in request.POST:
+    elif 'quest6' in request.POST:
         question_query = LessonQuestions.objects.filter(question_no = 7, lesson='Cities and Comedians')
         _quest = question_query
         return render(request,'q1.html',{'quests': _quest})
-    elif 'quest2' in request.POST:
+    elif 'quest7' in request.POST:
         question_query = LessonQuestions.objects.filter(question_no = 8, lesson='Cities and Comedians')
         _quest = question_query
         return render(request,'q1.html',{'quests': _quest})
-    elif 'quest2' in request.POST:
+    elif 'quest8' in request.POST:
         question_query = LessonQuestions.objects.filter(question_no = 9 , lesson='Cities and Comedians')
         _quest = question_query
         return render(request,'q1.html',{'quests': _quest})
-    elif 'quest2' in request.POST:
+    elif 'quest9' in request.POST:
+        question_query = LessonQuestions.objects.filter(question_no = 10, lesson='Cities and Comedians' )
+        _quest = question_query
+        return render(request,'q1.html',{'quests': _quest})
+    elif 'quest10' in request.POST:
         question_query = LessonQuestions.objects.filter(question_no = 10, lesson='Cities and Comedians' )
         _quest = question_query
         return render(request,'q1.html',{'quests': _quest})

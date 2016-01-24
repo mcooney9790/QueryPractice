@@ -1,5 +1,51 @@
 <!DOCTYPE html>
-{% extends "base.html" %}
+{% extends "index.html" %}
+
+{% block questionlist %}
+
+<form style="display:inline-block;" method="post" action="/first/"> {% csrf_token %}
+
+            <ul class="sidebar-nav">
+                <li>
+                    <li>
+                    <h3 align="center">Cities and Comedians</h3>
+                </li>
+                </li>
+                <li>
+                    <input class="btn btn-default" type="submit" name="quest1" value="Question 1">
+                </li>
+                <li>
+                    <input class="btn btn-default" type="submit" name="quest2" value="Question 2">
+                </li>
+                <li>
+                    <input class="btn btn-default" type="submit" name="quest3" value="Question 3">
+                </li>
+                <li>
+                    <input class="btn btn-default" type="submit" name="quest4" value="Question 4">
+                </li>
+                <li>
+                    <input class="btn btn-default" type="submit" name="quest5" value="Question 5">
+                </li>
+                <li>
+                    <input class="btn btn-default" type="submit" name="quest6" value="Question 6">
+                </li>
+                <li>
+                    <input class="btn btn-default" type="submit" name="quest7" value="Question 7">
+                </li>
+                <li>
+                    <input class="btn btn-default" type="submit" name="quest8" value="Question 8">
+                </li>
+                <li>
+                    <input class="btn btn-default" type="submit" name="quest9" value="Question 9">
+                </li>
+                <li>
+                    <input class="btn btn-default" type="submit" name="quest10" value="Question 10">
+                </li>
+
+            </ul>
+        </form>
+
+{% endblock %}
 
 {% block question %}
 
