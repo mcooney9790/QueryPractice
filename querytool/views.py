@@ -6,7 +6,7 @@ from django.template import Context
 from .models import Cities, LessonQuestions
 from django.db import connection
 import pandas as pd
-from bs4 import BeautifulSoup as bs
+import BeautifulSoup as bs
 
 
 def current_ua_display(request):
@@ -21,6 +21,7 @@ def current_ua_display(request):
 def hello(request):
 
     return render(request, 'home.html')
+
 def citandcom(request):
 
     return render(request, 'q1.html')

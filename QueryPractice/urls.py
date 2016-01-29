@@ -19,6 +19,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from querytool import views
 
+
 urlpatterns = [
     url(r'^$', views.hello),
     url(r'^citnandcom/', views.citandcom),
