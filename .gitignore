@@ -1,4 +1,5 @@
 QueryEnv
+querytool/apps.py
 
 *.pyc
 
