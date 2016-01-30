@@ -87,50 +87,50 @@ def firstq(request):
     if 'quest1' in request.POST:
         question_query = LessonQuestions.objects.filter(question_no = 1, lesson='Cities and Comedians')
         _quest = question_query
-        return render(request,'q1.html',{'quests': _quest})
+        return render(request,'show_question.html',{'question': _quest})
     elif 'quest2' in request.POST:
         question_query = LessonQuestions.objects.filter(question_no = 2, lesson='Cities and Comedians')
         _quest = question_query
-        return render(request,'q1.html',{'quests': _quest})
+        return render(request,'show_question.html',{'question': _quest})
     elif 'quest3' in request.POST:
         question_query = LessonQuestions.objects.filter(question_no = 3, lesson='Cities and Comedians')
         _quest = question_query
-        return render(request,'q1.html',{'quests': _quest})
+        return render(request,'show_question.html',{'question': _quest})
     elif 'quest4' in request.POST:
         question_query = LessonQuestions.objects.filter(question_no = 4, lesson='Cities and Comedians')
         _quest = question_query
-        return render(request,'q1.html',{'quests': _quest})
+        return render(request,'show_question.html',{'question': _quest})
     elif 'quest5' in request.POST:
         question_query = LessonQuestions.objects.filter(question_no = 5, lesson='Cities and Comedians')
         _quest = question_query
-        return render(request,'q1.html',{'quests': _quest})
+        return render(request,'show_question.html',{'question': _quest})
     elif 'quest6' in request.POST:
         question_query = LessonQuestions.objects.filter(question_no = 6, lesson='Cities and Comedians')
         _quest = question_query
-        return render(request,'q1.html',{'quests': _quest})
+        return render(request,'show_question.html',{'question': _quest})
     elif 'quest6' in request.POST:
         question_query = LessonQuestions.objects.filter(question_no = 7, lesson='Cities and Comedians')
         _quest = question_query
-        return render(request,'q1.html',{'quests': _quest})
+        return render(request,'q1.html',{'question': _quest})
     elif 'quest7' in request.POST:
         question_query = LessonQuestions.objects.filter(question_no = 8, lesson='Cities and Comedians')
         _quest = question_query
-        return render(request,'q1.html',{'quests': _quest})
+        return render(request,'q1.html',{'question': _quest})
     elif 'quest8' in request.POST:
         question_query = LessonQuestions.objects.filter(question_no = 9 , lesson='Cities and Comedians')
         _quest = question_query
-        return render(request,'q1.html',{'quests': _quest})
+        return render(request,'q1.html',{'question': _quest})
     elif 'quest9' in request.POST:
         question_query = LessonQuestions.objects.filter(question_no = 10, lesson='Cities and Comedians' )
         _quest = question_query
-        return render(request,'q1.html',{'quests': _quest})
+        return render(request,'q1.html',{'question': _quest})
     elif 'quest10' in request.POST:
         question_query = LessonQuestions.objects.filter(question_no = 10, lesson='Cities and Comedians' )
         _quest = question_query
-        return render(request,'q1.html',{'quests': _quest})
+        return render(request,'q1.html',{'question': _quest})
     else:
         _quest = 'fail'
-        return render(request,'q1.html',{'quest': _quest})
+        return render(request,'q1.html',{'question': _quest})
 
 
 def thirdq(request):
