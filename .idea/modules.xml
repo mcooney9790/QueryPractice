@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/BizSite/.idea/BizSite.iml" filepath="$USER_HOME$/BizSite/.idea/BizSite.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/QueryPractice.iml" filepath="$PROJECT_DIR$/.idea/QueryPractice.iml" />
+      <module fileurl="file://$USER_HOME$/prp/.idea/prp.iml" filepath="$USER_HOME$/prp/.idea/prp.iml" />
     </modules>
   </component>
 </project>
