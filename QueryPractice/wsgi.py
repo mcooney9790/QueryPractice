@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.9/howto/deployment/wsgi/
 import os
 from django.core.wsgi import get_wsgi_application
 #os.environ.setdefault("DJANGO_SETTINGS_MODULE", "QueryPractice.settings")
-os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'QueryPractice.settings'
 
 from dj_static import Cling
 
