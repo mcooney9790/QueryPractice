@@ -8,37 +8,34 @@ class handleQuery():
         self.query = query
         self.cursor = connection.cursor()
         self.results = {}
-        self.column = 0
         self.list = []
 
-    def query_db(self, query):
-
+    def query_db(self):
         c = self.cursor
-        c.execute(query)
+        c.execute(self.query)
 
         return c
 
     def retrieve_data(self):
+        c = 0
         try:
-            c = self.query_db(self.query)
+            c = self.query_db()
             data = c.fetchall()
         except:
+
             data = "Invalid Query, check your query logic!"
+
         return data
 
+    def fields(self):
 
-    '''def fields(self,cursor):
-        results = cursor.retrieve_data()
-        print results
-        for d in cursor.description:
+        c = self.query_db()
+        list = []
+        for d in c.description:
             if d[0] in list:
                 new = "{}_1" .format(d[0])
                 list.append(new)
-                results[column] = new
             else:
-                results[column] = d[0]
                 list.append(d[0])
-            column = column + 1
 
         return list
-'''

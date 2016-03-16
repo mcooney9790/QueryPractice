@@ -8,9 +8,6 @@ import bs4 as bs
 from .models import Cities, LessonQuestions
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render
-
-
-
 from modules import query_db
 
 def current_ua_display(request):
@@ -34,21 +31,30 @@ def citandcom(request):
 def search(request):
 
     if 'q' in request.GET and request.GET['q']:
-        #get query from HTML request object
+        # get query from HTML request object
         q = request.GET['q']
 
-        #replace 'cities' with 'querytool_cities'
+        # replace 'cities' with 'querytool_cities'
         f = q.replace('cities','querytool_cities')
 
+        # this call queries the database and returns the data from the sent query along
+        # with the cursor to retrieve the field names (field call below)
 
         hq = query_db.handleQuery(f)
         query_results = hq.retrieve_data()
+
         try:
-            df = pd.DataFrame(query_results)
+            # set column names
+            cols = hq.fields()
+
+            # convert data to dataframe
+            df = pd.DataFrame(query_results,columns=cols)
+
+            # convert Pandas dataframe to html
             table = df.to_html(index=False, col_space=20, na_rep='    ')
 
+            # add CSS attributes
             soup = bs.BeautifulSoup(table,"html.parser")
-
             changefieldnames = soup.find_all('th')
 
             for h in changefieldnames:
