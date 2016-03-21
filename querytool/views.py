@@ -92,8 +92,9 @@ def firstq(request):
             q_no = request.POST['ccquest']
 
             i = int(q_no)
-            _quest = LessonQuestions.objects.filter(question_no = i, lesson='Cities and Comedians')
-            question = _quest
+
+            question = LessonQuestions.objects.get(question_no = i, lesson='Cities and Comedians')
+
         else:
             question = 'Error processing your request.'
 
