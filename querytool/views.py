@@ -1,14 +1,16 @@
 import datetime
 from django.template.loader import get_template
-from django.template import Context
+from django.template import RequestContext
 from django.db import connection
 from .forms import questionForm
 import pandas as pd
 import bs4 as bs
 from .models import Cities, LessonQuestions
 from django.http import HttpResponse, Http404, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from modules import query_db
+
+
 
 def current_ua_display(request):
     try:
@@ -22,11 +24,19 @@ def current_ua_display(request):
 
 def hello(request):
 
-    return render(request, 'home.html')
+    template =  'index.html'
+    return render_to_response(template,context_instance = RequestContext(request))
 
 def citandcom(request):
 
-    return render(request, 'q1.html')
+    if request.is_ajax():
+        template = "QueryCenter.html"
+        print "request ajax"
+    else:
+        print "not ajax"
+        template = "index.html"
+
+    return render_to_response(template)
 
 def search(request):
 

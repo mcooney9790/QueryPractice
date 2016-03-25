@@ -23,12 +23,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', views.hello),
-    url(r'^citnandcom/', views.citandcom),
     url(r'^current_ua/$', views.current_ua_display),
     url(r'^display_meta/$', views.display_meta),
     url(r'^admin/', admin.site.urls),
     url(r'^search/', views.search),
-    url(r'^first/', views.firstq),
+    url(r'^first/', views.citandcom),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
