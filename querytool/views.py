@@ -1,12 +1,12 @@
 import datetime
-from django.template.loader import get_template
+from django.template.loader import get_template, render_to_string
 from django.template import RequestContext
 from django.db import connection
 from .forms import questionForm
 import pandas as pd
 import bs4 as bs
 from .models import Cities, LessonQuestions
-from django.http import HttpResponse, Http404, HttpResponseRedirect
+from django.http import HttpResponse, Http404, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, render_to_response
 from modules import query_db
 
@@ -41,11 +41,9 @@ def citandcom(request):
 def search(request):
 
     if 'q' in request.GET and request.GET['q']:
+
         # get query from HTML request object
         q = request.GET['q']
-
-        # replace 'cities' with 'querytool_cities'
-        # f = q.replace('cities','querytool_cities')
 
         # this call queries the database and returns the data from the sent query along
         # with the cursor to retrieve the field names (field call below)
@@ -86,8 +84,11 @@ def search(request):
             cities = "{}" .format(tag)
         except:
             cities = query_results
-
-        return render(request, 'search_form.html', {'cities':cities, 'query': q })
+        j = {'cities': cities, 'query': q }
+        if request.is_ajax():
+            return JsonResponse(j)
+        else:
+            return render(request, 'search_form.html', {'cities':cities, 'q': q })
     else:
             invalid_q = 'Database not connected'
             return render(request, 'search_form.html', {'query': invalid_q})
