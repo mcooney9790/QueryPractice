@@ -45,12 +45,12 @@ def search(request):
         q = request.GET['q']
 
         # replace 'cities' with 'querytool_cities'
-        f = q.replace('cities','querytool_cities')
+        # f = q.replace('cities','querytool_cities')
 
         # this call queries the database and returns the data from the sent query along
         # with the cursor to retrieve the field names (field call below)
 
-        hq = query_db.handleQuery(f)
+        hq = query_db.handleQuery(q)
         query_results = hq.retrieve_data()
 
         try:
