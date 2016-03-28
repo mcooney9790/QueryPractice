@@ -7,7 +7,7 @@ $(document).ready(function(){
         makeQuery(q);
 
     });
-
+    $("#questionsubmit")
 
     function makeQuery(q){
         console.log("We makin those queries!");

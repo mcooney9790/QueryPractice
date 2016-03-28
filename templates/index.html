@@ -38,11 +38,12 @@ http://www.templatemo.com/tm-480-story
             </div>
             
             <div class="container-fluid">
-
+                <!--<div class="row">
+                    <img src="{% static 'img/banner.png' %}">
+                </div>-->
                 <div class="row">
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                        
-                        <div class="header">
+
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" class="header">
 
                             <!-- site title -->
                             <header class="box box-white">
@@ -50,27 +51,24 @@ http://www.templatemo.com/tm-480-story
                                     <h1 class="box-text site-title-text">Query Tool</h1>
                                 </a>            
                             </header>
-
-
                             <!-- site navigation -->
                             <nav class="js-nav">
                                 <ul class="nav-items-container">
 
                                     <li data-nav-item-id="page-1" class="block-keep-ratio block-keep-ratio-1-1 block-width-half box box-white box-nav-item js-nav-item">
-                                        <a href="#page-1" class="block-keep-ratio-content box-nav-item-link">
-                                            <span class="box-text box-text-nav-item flexbox-center">About</span>
-                                        </a>
-                                    </li>
-
-                                    <li data-nav-item-id="page-2" class="block-keep-ratio block-keep-ratio-1-1 block-width-half box box-white box-nav-item js-nav-item">
-
-                                        <a href="#page-2" id="#click_me"  class="block-keep-ratio-content box-nav-item-link">
+                                        <a href="#page-1" lass="block-keep-ratio-content box-nav-item-link">
                                             <span class="box-text box-text-nav-item flexbox-center">Cities and Comedians</span>
                                         </a>
                                     </li>
 
+                                    <li data-nav-item-id="page-2" class="block-keep-ratio block-keep-ratio-1-1 block-width-half box box-white box-nav-item js-nav-item">
+                                        <a href="#page-2" lass="block-keep-ratio-content box-nav-item-link">
+                                            <span class="box-text box-text-nav-item flexbox-center">Boys and Girls</span>
+                                        </a>
+                                    </li>
+
                                     <li data-nav-item-id="page-3" class="block-keep-ratio block-keep-ratio-1-1 block-width-half box box-white box-nav-item js-nav-item">
-                                        <a href="#page-3" class="block-keep-ratio-content box-nav-item-link">
+                                        <a href="#page-3" lass="block-keep-ratio-content box-nav-item-link">
                                             <span class="box-text box-text-nav-item flexbox-center">Rappers</span>
                                         </a>
                                     </li>
@@ -85,41 +83,14 @@ http://www.templatemo.com/tm-480-story
                             </nav>    
                         </div> <!-- .header -->
 
-                    </div>
 
-                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-6 col-xl-6">
-                        <div class="content-wrapper js-content-wrapper">
+
+
+                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" class="content-wrapper js-content-wrapper">
 
                            <!-- about -->
                             <section data-page-id="page-1" class="content content-gallery js-content">
 
-                                    <!-- <p>Credits go to <a rel="nofollow" href="http://unsplash.com">Unsplash</a> for images.</p> -->
-                                    <div class="hide-flex" style="display:hidden;">
-                                    <div class="flexslider-wrapper">
-                                        <div id="slider" class="flexslider">
-                                            <ul class="slides">
-                                                <li><img src="{% static 'img/slider/slide1.jpg' %}" alt="Slide 1" /></li>
-                                                <li><img src="{% static 'img/slider/slide2.jpg' %}" alt="Slide 2" /></li>
-                                                <li><img src="{% static 'img/slider/slide3.jpg' %}" alt="Slide 3" /></li>
-                                                <li><img src="{% static 'img/slider/slide4.jpg' %}" alt="Slide 4" /></li>
-                                                <li><img src="{% static 'img/slider/slide5.jpg' %}" alt="Slide 5" /></li>
-                                                <li><img src="{% static 'img/slider/slide6.jpg' %}" alt="Slide 6" /></li>
-                                            </ul>
-                                        </div> <!-- #slider -->
-
-                                        <div id="carousel" class="flexslider">
-                                            <ul class="slides">
-                                                <li><img src="{% static 'img/slider/thumb1.jpg' %}" alt="Thumbnail 1" /></li>
-                                                <li><img src="{% static 'img/slider/thumb2.jpg' %}" alt="Thumbnail 2" /></li>
-                                                <li><img src="{% static 'img/slider/thumb3.jpg' %}" alt="Thumbnail 3" /></li>
-                                                <li><img src="{% static 'img/slider/thumb4.jpg' %}" alt="Thumbnail 4" /></li>
-                                                <li><img src="{% static 'img/slider/thumb5.jpg' %}" alt="Thumbnail 5" /></li>
-                                                <li><img src="{% static 'img/slider/thumb6.jpg' %}" alt="Thumbnail 6" /></li>
-                                            </ul>
-                                        </div>  <!-- #carousel -->
-
-                                    </div>
-                                    </div>
 
                             </section> <!-- #about -->
 
@@ -128,20 +99,32 @@ http://www.templatemo.com/tm-480-story
                                 <header class="box box-black margin-b-20">
                                     <h2 class="box-text page-title-text">Cities and Comedians</h2>
                                 </header>
-                                {% block show_question %}
 
-                                {% endblock %}
-
-                                <div class="content-text">
+                                <div>
+                                    <div class="content-text">
                                     <div class="page-content-wrapper">
                                         <div class="container-fluid">
                                             <div class="row">
-                                                <img src="{% static 'img/cities_and_comedians_REL.jpg' %}" height="200" width="400"/>
+                                                <img src="{% static 'img/cities_and_comedians_REL.jpg' %}" height="250" width="600"/>
                                                 <div class= "querybox-wrapper" class="col-lg-12">
+                                                <form>
+                                                    <select name="cars">
+                                                             <option value="1">Question 1</option>
+                                                             <option value="2">Question 2</option>
+                                                             <option value="3">Question 3</option>
+                                                             <option value="4">Question 4</option>
+                                                             <option value="5">Question 5</option>
+                                                             <option value="6">Question 6</option>
+                                                             <option value="7">Question 7</option>
+                                                             <option value="8">Question 8</option>
+                                                             <option value="9">Question 9</option>
+                                                             <option value="10">Question 10</option>
+                                                    </select>
+                                                </form>
                                                     <form class="form-group" id="submitquery" method="get">
                                                         {% csrf_token %}
+                                                        <div id="ask_question"></div>
                                                         <textarea type="text" id = "querybox" class = "querybox" cols= "40" rows="5" name="q"/></textarea>
-
                                                         <input type="submit" value="Search">
                                                     </form>
                                                     </div>
@@ -155,6 +138,7 @@ http://www.templatemo.com/tm-480-story
                                         </div>
                                     </div>
 
+                                </div>
                                 </div>
 
                                 <!-- Page Content -->
@@ -239,7 +223,6 @@ http://www.templatemo.com/tm-480-story
                                 <!-- Page Content -->
 
                             </section> <!-- #contact -->
-                        </div>
                     </div>
 
                 </div>
@@ -263,7 +246,6 @@ http://www.templatemo.com/tm-480-story
             
         <!-- load JS files -->
         <script src="{% static 'js/jquery-1.11.3.min.js' %}"></script> <!-- jQuery -->
-        <script src="{% static 'js/jquery.flexslider-min.js' %}"></script> <!--Flex Slider-->
         <script src="{% static 'js/jquery.backstretch.min.js' %}"></script> <!-- Backstretch http://srobbin.com/jquery-plugins/backstretch/ -->
         <script src="{% static 'js/templatemo-script.js' %}"></script> <!-- Templatemo scripts --><script src="{% static 'js/ajaxcalls.js' %}"></script> jax -->
 
