@@ -99,20 +99,26 @@ def search(request):
 
 def firstq(request):
     try:
-        if request.method == 'POST':
-            q_no = request.POST['ccquest']
+        if request.method == 'GET':
+            q_no = request.GET['quest']
 
             i = int(q_no)
 
-            question = LessonQuestions.objects.get(question_no = i, lesson='Cities and Comedians')
+            quest = LessonQuestions.objects.get(question_no = i, lesson='Cities and Comedians')
 
         else:
-            question = 'Error processing your request.'
+            quest = 'Error processing your request.'
 
     except:
-            question = 'Error processing your request.'
+            quest = 'Error processing your request.'
 
-    return render(request,'show_question.html',{'question': question})
+    #Convert query to string object
+    question = str(quest)
+
+    #Put question in a json.
+    j = {'question': question}
+
+    return JsonResponse(j)
 
 
 def display_meta(request):

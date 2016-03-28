@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^search/', views.search),
     url(r'^first/', views.citandcom),
+    url(r'^postquestion/', views.firstq),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

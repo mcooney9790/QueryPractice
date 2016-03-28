@@ -1,3 +1,23 @@
+function showQuestion(value) {
+        //document.getElementById("show-question").innerHTML = showthis;
+        $.ajax({
+            url: '/postquestion/',
+            dataType:'json',
+            type:'GET',
+            data:{
+                quest: value
+            },
+            success: function(data){
+                console.log(data);
+                showQ = data.question;
+                document.getElementById("show-question").innerHTML = showQ;
+            }
+
+        });
+
+    }
+
+
 $(document).ready(function(){
 
     $("#submitquery").on('submit', function(event){
@@ -7,8 +27,6 @@ $(document).ready(function(){
         makeQuery(q);
 
     });
-    $("#questionsubmit")
-
     function makeQuery(q){
         console.log("We makin those queries!");
         $.ajax({
