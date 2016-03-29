@@ -1,7 +1,7 @@
 function showQuestion(value) {
         //document.getElementById("show-question").innerHTML = showthis;
         $.ajax({
-            url: '/postquestion/',
+            url: '/getquestion/',
             dataType:'json',
             type:'GET',
             data:{
@@ -20,14 +20,19 @@ function showQuestion(value) {
 
 $(document).ready(function(){
 
-    $("#submitquery").on('submit', function(event){
+    $("#submitquery-1,#submitquery-2,#submitquery-3").on('submit', function(event){
         event.preventDefault();
         console.log("form submitted!")
-        var q = $('#querybox').val();
-        makeQuery(q);
-
+        var id_str = $(this).attr('id');
+        var id_split_arr = id_str.split("-");
+        i = id_split_arr[1];
+        console.log(i);
+        var q = $(this).find('.querybox').val();
+        makeQuery(q,i);
     });
-    function makeQuery(q){
+
+
+    function makeQuery(q,i){
         console.log("We makin those queries!");
         $.ajax({
             url: '/search/',
@@ -39,7 +44,9 @@ $(document).ready(function(){
             success: function(data)
             {
                var show = data.cities;
-               $('#showqueryhere').html(show)
+               var render_div = '#showqueryhere' + i
+               console.log(render_div)
+               $(render_div).html(show)
             }
         });
 

@@ -48,7 +48,7 @@ http://www.templatemo.com/tm-480-story
                             <!-- site title -->
                             <header class="box box-white">
                                 <a href="javascript:void(0)" class="js-site-title">
-                                    <h1 class="box-text site-title-text">Query Tool</h1>
+                                    <h1 class="box-text site-title-text">Query Boss</h1>
                                 </a>            
                             </header>
                             <!-- site navigation -->
@@ -57,13 +57,13 @@ http://www.templatemo.com/tm-480-story
 
                                     <li data-nav-item-id="page-1" class="block-keep-ratio block-keep-ratio-1-1 block-width-half box box-white box-nav-item js-nav-item">
                                         <a href="#page-1" lass="block-keep-ratio-content box-nav-item-link">
-                                            <span class="box-text box-text-nav-item flexbox-center">Cities and Comedians</span>
+                                            <span class="box-text box-text-nav-item flexbox-center">About</span>
                                         </a>
                                     </li>
 
                                     <li data-nav-item-id="page-2" class="block-keep-ratio block-keep-ratio-1-1 block-width-half box box-white box-nav-item js-nav-item">
                                         <a href="#page-2" lass="block-keep-ratio-content box-nav-item-link">
-                                            <span class="box-text box-text-nav-item flexbox-center">Boys and Girls</span>
+                                            <span class="box-text box-text-nav-item flexbox-center">Cities and Comedians</span>
                                         </a>
                                     </li>
 
@@ -75,7 +75,7 @@ http://www.templatemo.com/tm-480-story
 
                                     <li data-nav-item-id="page-4" class="block-keep-ratio block-keep-ratio-1-1 block-width-half box box-white box-nav-item js-nav-item">
                                         <a href="#page-4" lass="block-keep-ratio-content box-nav-item-link">
-                                            <span class="box-text box-text-nav-item flexbox-center">Contact</span>
+                                            <span class="box-text box-text-nav-item flexbox-center">Boys and Girls</span>
                                         </a>
                                     </li>
 
@@ -125,15 +125,15 @@ http://www.templatemo.com/tm-480-story
 
                                                     </form>
 
-                                                    <form class="form-group" id="submitquery" method="get">
+                                                    <form class="form-group" id="submitquery-1" method="get">
                                                         {% csrf_token %}
 
                                                         <div id="show-question"></div>
-                                                        <textarea type="text" id = "querybox" class = "querybox" cols= "40" rows="5" name="q"/></textarea>
+                                                        <textarea type="text" class = "querybox" cols= "40" rows="5" name="q"/></textarea>
                                                         <input type="submit" value="Search">
                                                     </form>
                                                     </div>
-                                                <div id="showqueryhere"></div>
+                                                <div id="showqueryhere1"></div>
 
 
                                                 </div>
@@ -157,25 +157,44 @@ http://www.templatemo.com/tm-480-story
                                 <header class="box box-black margin-b-20">
                                     <h2 class="box-text page-title-text">Rappers</h2>
                                 </header>
-                                {% block show_question2 %}
 
-                                {% endblock %}
-
-                                <div class="content-text">
+                                <div>
+                                    <div class="content-text">
                                     <div class="page-content-wrapper">
                                         <div class="container-fluid">
                                             <div class="row">
-                                                <img src="{% static 'img/cities_and_comedians_REL.jpg' %}" height="200" width="400"/>
+                                                <img src="{% static 'img/cities_and_comedians_REL.jpg' %}" height="250" width="600"/>
                                                 <div class= "querybox-wrapper" class="col-lg-12">
-                                                    <form class="form-group" action="/search/" method="get">
-                                                        <textarea type="text" class = "querybox" cols= "40" rows="5" name="q"/></textarea>
+                                                    <form method="get">
 
+                                                        <select onchange="showQuestion(this.value)">
+                                                             <option selected>Choose a question</option>
+                                                             <option value="1">Question 1</option>
+                                                             <option value="2">Question 2</option>
+                                                             <option value="3">Question 3</option>
+                                                             <option value="4">Question 4</option>
+                                                             <option value="5">Question 5</option>
+                                                             <option value="6">Question 6</option>
+                                                             <option value="7">Question 7</option>
+                                                             <option value="8">Question 8</option>
+                                                             <option value="9">Question 9</option>
+                                                             <option value="10">Question 10</option>
+                                                        </select>
+
+                                                    </form>
+
+                                                    <form class="form-group" id="submitquery-2" method="get">
+                                                        {% csrf_token %}
+
+                                                        <div id="show-question2"></div>
+                                                        <textarea type="text" class = "querybox" cols= "40" rows="5" name="q"/></textarea>
                                                         <input type="submit" value="Search">
                                                     </form>
                                                     </div>
-                                                {% block queryresult2 %}
+                                                <div id="showqueryhere2">
 
-                                                {% endblock %}
+                                                </div>
+
 
                                                 </div>
                                             <div>
@@ -185,36 +204,53 @@ http://www.templatemo.com/tm-480-story
                                     </div>
 
                                 </div>
+                                </div>
 
                                 <!-- Page Content -->
 
-                            </section> <!-- #services -->
+                            </section> <!-- #Rappers -->
 
                             <!-- contact -->
                             <section data-page-id="page-4" class="content js-content">
-                                
-                               <header class="box box-black margin-b-20">
+                              <header class="box box-black margin-b-20">
                                     <h2 class="box-text page-title-text">Boys and Girls</h2>
                                 </header>
-                                {% block show_question3 %}
 
-                                {% endblock %}
-
-                                <div class="content-text">
+                                <div>
+                                    <div class="content-text">
                                     <div class="page-content-wrapper">
                                         <div class="container-fluid">
                                             <div class="row">
-                                                <img src="{% static 'img/cities_and_comedians_REL.jpg' %}" height="200" width="400"/>
+                                                <img src="{% static 'img/cities_and_comedians_REL.jpg' %}" height="250" width="600"/>
                                                 <div class= "querybox-wrapper" class="col-lg-12">
-                                                    <form class="form-group" action="/search/" method="get">
-                                                        <textarea type="text" class = "querybox" cols= "40" rows="5" name="q"/></textarea>
+                                                    <form method="get">
 
+                                                        <select onchange="showQuestion(this.value)">
+                                                             <option>Choose a question</option>
+                                                             <option value="21">Question 1</option>
+                                                             <option value="22">Question 2</option>
+                                                             <option value="23">Question 3</option>
+                                                             <option value="24">Question 4</option>
+                                                             <option value="25">Question 5</option>
+                                                             <option value="26">Question 6</option>
+                                                             <option value="27">Question 7</option>
+                                                             <option value="28">Question 8</option>
+                                                             <option value="29">Question 9</option>
+                                                             <option value="30">Question 10</option>
+                                                        </select>
+
+                                                    </form>
+
+                                                    <form class="form-group" id="submitquery-3" method="get">
+                                                        {% csrf_token %}
+
+                                                        <div id="show-question3"></div>
+                                                        <textarea type="text"class = "querybox" cols= "40" rows="5" name="q"/></textarea>
                                                         <input type="submit" value="Search">
                                                     </form>
                                                     </div>
-                                                {% block queryresult3 %}
+                                                <div id="showqueryhere3"></div>
 
-                                                {% endblock %}
 
                                                 </div>
                                             <div>
@@ -224,10 +260,10 @@ http://www.templatemo.com/tm-480-story
                                     </div>
 
                                 </div>
+                                </div>
 
                                 <!-- Page Content -->
-
-                            </section> <!-- #contact -->
+                            </section> <!-- #Boys and Girls -->
                     </div>
 
                 </div>
@@ -236,9 +272,7 @@ http://www.templatemo.com/tm-480-story
                 <footer class="row footer js-footer">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-                        <p class="copyright-text">Copyright &copy; 2016 Company Name 
-                        
-                        | Design: <a href="http://www.templatemo.com/tm-480-story" target="_parent" title="Story Bootstrap Theme">The Story</a></p>  
+                        <p class="copyright-text">Copyright &copy; 2016Q Query Boss</p>
 
                     </div>                
                 </footer>

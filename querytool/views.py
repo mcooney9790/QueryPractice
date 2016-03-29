@@ -85,28 +85,41 @@ def search(request):
         except:
             cities = query_results
         j = {'cities': cities, 'query': q }
+
         if request.is_ajax():
             return JsonResponse(j)
         else:
-            return render(request, 'search_form.html', {'cities':cities, 'q': q })
+            j = {'cities': cities, 'query': q }
+            return JsonResponse(j)
     else:
-            invalid_q = 'Database not connected'
-            return render(request, 'search_form.html', {'query': invalid_q})
-    #except:
-    #       e = '<p>Error</p>'
-    #      invalid_q = 'Your Query was invalid'
-    #      return render(request, 'search_form.html', {'cities': e ,'query': invalid_q})
+            cities = 'Database not connected'
+            q = 'Database not connected'
+            j = {'cities': cities, 'query': q }
+            return JsonResponse(j)
 
-def firstq(request):
+def getq(request):
     try:
         if request.method == 'GET':
             q_no = request.GET['quest']
 
             i = int(q_no)
-
-            quest = LessonQuestions.objects.get(question_no = i, lesson='Cities and Comedians')
+            if i <= 10:
+                quest = LessonQuestions.objects.get(question_no = i, lesson='Cities and Comedians')
+            elif 10 < i <= 20:
+                #i = i - 10
+                #quest = LessonQuestions.objects.get(question_no = i, lesson='Rappers')
+                pass
+                quest = 'Rappers lesson not yet built.'
+            elif 20 < i <= 30:
+                #i = i - 20
+                #quest = LessonQuestions.objects.get(question_no = i, lesson='Boys and Girls')
+                quest = 'Boys and girls lesson not yet built.'
+                pass
+            else:
+                quest = 'Error processing your request.'
 
         else:
+
             quest = 'Error processing your request.'
 
     except:
