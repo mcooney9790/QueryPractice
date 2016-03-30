@@ -36,6 +36,8 @@ class LessonQuestions(models.Model):
     lesson = models.CharField(max_length=100)
     question_no = models.IntegerField()
     question = models.CharField(max_length=1000)
+    answer_query = models.CharField(max_length=2000)
+    hint = models.CharField(max_length=2000)
 
     def __unicode__(self):
         return self.question
