@@ -26,9 +26,11 @@ $(document).ready(function(){
         var id_str = $(this).attr('id');
         var id_split_arr = id_str.split("-");
         i = id_split_arr[1];
-        console.log(i);
         var q = $(this).find('.querybox').val();
         makeQuery(q,i);
+        var q = $(this).find('.querybox').val();
+        var width = $('#table-striped-'+i).width()
+
     });
 
 
@@ -39,13 +41,13 @@ $(document).ready(function(){
             dataType: 'json',
             type: 'GET',
             data: {
-                         q: q
+                         q: q,
+                         i: i
             },
             success: function(data)
             {
                var show = data.cities;
                var render_div = '#showqueryhere' + i
-               console.log(render_div)
                $(render_div).html(show)
             }
         });

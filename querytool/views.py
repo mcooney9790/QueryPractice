@@ -44,6 +44,7 @@ def search(request):
 
         # get query from HTML request object
         q = request.GET['q']
+        i = request.GET['i']
 
         # this call queries the database and returns the data from the sent query along
         # with the cursor to retrieve the field names (field call below)
@@ -79,7 +80,7 @@ def search(request):
                 d['align'] = 'center'
 
             tag = soup.table
-            tag['class'] = 'table-striped'
+            tag['id'] = 'table-striped-{}' .format(i)
 
             cities = "{}" .format(tag)
         except:
