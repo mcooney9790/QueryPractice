@@ -132,7 +132,7 @@ STATIC_ROOT = "static_in_env/static_root"
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static_in_pro", "our_static_1"),
+    os.path.join(BASE_DIR, "static_in_pro", "our_static"),
 )
 #STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
